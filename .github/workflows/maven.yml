@@ -1,0 +1,19 @@
+name : Build spring Boot
+on:
+    push:
+        branches:
+            jobs:
+                build:
+                    run-on: ubuntu-latest
+                    steps:
+                        - uses: action/chechout@v4
+                        - name: java 17
+                        uses: action/chechout@v4
+                        with:
+                            java-version: '17'
+                            distribution: 'termurin'
+                            cache: maven
+                            - name: Build 
+                            run: mvn clean pakage -DskipTests
+                            
+
